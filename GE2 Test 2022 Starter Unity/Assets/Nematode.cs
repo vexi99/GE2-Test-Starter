@@ -31,19 +31,23 @@ public class Nematode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        NematodeMovement();   
     }
 
     void NematodeMovement()
     {
-        
+        Vector3 change = new Vector3(0.005f,0,0); 
+        for(int i = 0; i < length; i++)
+        {
+            body[i].transform.position += change; //increasing x pos slowly
+        }
     }
 
     void CreateNematode()
     {
         //Create Random starting Position
-        startXPos = 0; //Random.Range(-100,100);
-        startYPos = 0; //Random.Range(-100,100);
+        startXPos = Random.Range(-100,100);
+        startYPos = Random.Range(-100,100);
 
         
 
