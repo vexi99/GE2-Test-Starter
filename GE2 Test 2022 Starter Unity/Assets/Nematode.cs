@@ -78,12 +78,12 @@ public class Nematode : MonoBehaviour
             }
             
             //Attempted work on changing colours
-            Color32 colorSet = new Color32((byte)(255/i),(byte)(255/i),(byte)(255/i),1);
+            /*Color32 colorSet = new Color32((byte)(255/i),(byte)(255/i),(byte)(255/i),1);
             
             var sphereRenderer = body[i].GetComponent<Renderer>();
 
             sphereRenderer.material.color = colorSet;
-
+            */
 
         }   
     }
