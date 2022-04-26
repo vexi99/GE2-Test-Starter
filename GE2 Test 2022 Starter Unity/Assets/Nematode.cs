@@ -37,8 +37,23 @@ public class Nematode : MonoBehaviour
         {
             GameObject body = GameObject.Instantiate<GameObject>(head);
 
-            body.transform.position = transform.TransformPoint(new Vector3(0,0,i));
-            body.transform.parent = body.transform;
+            body.transform.position = transform.TransformPoint(new Vector3(0,0,i)); //spawn 1 unit away from last
+            body.transform.parent = body.transform; //trying to set body component as a child
+
+            //changing with of nematode as it lengthens
+            if(i < length/2)
+            {
+                //making skinnier
+                float width = (1.0f / (length / 2) * i);
+                body.transform.localScale = new Vector3(width, width, body.transform.localScale.z);
+            }
+            else
+            {
+                //making wider
+                float width = (1.0f * (length / 2) / i);
+                body.transform.localScale = new Vector3(width, width, body.transform.localScale.z);
+            }
+            
         }   
     }
 }
