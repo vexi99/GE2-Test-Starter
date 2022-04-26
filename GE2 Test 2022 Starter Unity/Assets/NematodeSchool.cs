@@ -8,7 +8,7 @@ public class NematodeSchool : MonoBehaviour
     //Create spawning features in Nematode.cs and then complete in here.
 
     public GameObject prefab;
-    public Nematode nematode; 
+    public Nematode todeSpawn, newSpawn; 
 
     [Range (1, 5000)]
     public int radius = 50;
@@ -18,10 +18,6 @@ public class NematodeSchool : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Nematode nematode = new Nematode();
-        // Put your code here
-        count = Random.Range(1,10);
-        nematode.CreateNematode();
 
     }
 

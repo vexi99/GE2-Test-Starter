@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Nematode : MonoBehaviour
 {
-    public int length; //To Be Set Random in Awake() function
+    public int length, numSpawn; //To Be Set Random in Awake() function
     public int startXPos, startYPos; //Starting X and Y Coords
 
     public Material material;
@@ -17,10 +17,14 @@ public class Nematode : MonoBehaviour
     {
         // Put your code here!
         length = Random.Range(3,15);
+        numSpawn = Random.Range(1,10); //Number being spawned
 
         body = new GameObject[length]; //created array of game objects.
 
-        CreateNematode();
+        for(int i = 0;i<numSpawn;i++)
+        {                       
+            CreateNematode();
+        }
     }
 
 
@@ -49,8 +53,8 @@ public class Nematode : MonoBehaviour
     public void CreateNematode()
     {
         //Create Random starting Position
-        startXPos = Random.Range(-100,100);
-        startYPos = Random.Range(-100,100);
+        startXPos = Random.Range(-20,30);
+        //startYPos = Random.Range(-100,100);
 
         
 
@@ -60,7 +64,7 @@ public class Nematode : MonoBehaviour
 
             body[i] = GameObject.Instantiate<GameObject>(head);
 
-            body[i].transform.position = transform.TransformPoint(new Vector3(startXPos,startYPos,i)); //spawn 1 unit away from last
+            body[i].transform.position = transform.TransformPoint(new Vector3(startXPos,0,i)); //spawn 1 unit away from last
             body[i].transform.parent = transform; 
 
             //changing with of nematode as it lengthens
