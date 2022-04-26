@@ -46,7 +46,7 @@ public class Nematode : MonoBehaviour
         }
     }
 
-    void CreateNematode()
+    public void CreateNematode()
     {
         //Create Random starting Position
         startXPos = Random.Range(-100,100);
@@ -61,7 +61,7 @@ public class Nematode : MonoBehaviour
             body[i] = GameObject.Instantiate<GameObject>(head);
 
             body[i].transform.position = transform.TransformPoint(new Vector3(startXPos,startYPos,i)); //spawn 1 unit away from last
-            //body[i].transform.parent = transform; //trying to set body component as a child
+            body[i].transform.parent = transform; 
 
             //changing with of nematode as it lengthens
             if(i < length/2)
