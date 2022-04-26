@@ -40,6 +40,7 @@ public class Nematode : MonoBehaviour
         for(int i = 0; i < length; i++)
         {
             body[i].transform.position += change; //increasing x pos slowly
+            //body[i].transform.Rotate(0,0,0.1f);
         }
     }
 
