@@ -426,7 +426,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5372656057005222850}
-  nematode: {fileID: 0}
+  todeSpawn: {fileID: 5372656057005222717}
+  newSpawn: {fileID: 0}
   radius: 50
   count: 5
 --- !u!4 &1024887883
@@ -597,6 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   length: 20
+  numSpawn: 0
   startXPos: 0
   startYPos: 0
   material: {fileID: 2100000, guid: 6e4fc4decf74e1c45909682693921aee, type: 2}
