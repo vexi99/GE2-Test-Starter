@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Nematode : MonoBehaviour
 {
-    public int length; //To Be Set Random
+    public int length; //To Be Set Random in Awake() function
 
     public Material material;
     public GameObject head;
@@ -12,26 +12,33 @@ public class Nematode : MonoBehaviour
     void Awake()
     {
         // Put your code here!
+        length = Random.Range(3,15);
+
+        CreateNematode();
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        length = Random.Range(0,20); //random length between 0 and 20
-        CreateNematode();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        head.transform.position += new Vector3(0, 10, 0);
+        
     }
 
     void CreateNematode()
     {
-        Vector3 test = new Vector3(0, 0, 0);
-        Instantiate(head, test,Quaternion.identity);
-        head.transform.position = new Vector3(0, 10, 0);
+        //For loop of random length deciding how many spheres are created for Nematode Body Length
+        for(int i = 0; i < length; i++)
+        {
+            GameObject body = GameObject.Instantiate<GameObject>(head);
+
+            body.transform.position = transform.TransformPoint(new Vector3(0,0,i));
+            body.transform.parent = body.transform;
+        }   
     }
 }
