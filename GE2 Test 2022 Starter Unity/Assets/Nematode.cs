@@ -10,13 +10,15 @@ public class Nematode : MonoBehaviour
     public Material material;
     public GameObject head;
     public GameObject[] body;
+    
+    
 
     void Awake()
     {
         // Put your code here!
         length = Random.Range(3,15);
 
-        body = new GameObject[length];
+        body = new GameObject[length]; //created array of game objects.
 
         CreateNematode();
     }
@@ -75,6 +77,14 @@ public class Nematode : MonoBehaviour
                 body[i].transform.localScale = new Vector3(width, width, body[i].transform.localScale.z);
             }
             
+            //Attempted work on changing colours
+            Color32 colorSet = new Color32((byte)(255/i),(byte)(255/i),(byte)(255/i),1);
+            
+            var sphereRenderer = body[i].GetComponent<Renderer>();
+
+            sphereRenderer.material.color = colorSet;
+
+
         }   
     }
 }
